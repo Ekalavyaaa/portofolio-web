@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Pribadi | Proyek 3</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya khusus untuk Artikel Blog */
+        .blog-header { text-align: center; padding: 60px 5% 30px; }
+        .blog-header h1 { font-size: 40px; margin-bottom: 10px; color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
+        .blog-meta { color: var(--text-light); font-size: 14px; margin-bottom: 30px; }
+        .blog-hero-img { width: 100%; max-width: 800px; height: 400px; object-fit: cover; border-radius: 15px; margin: 0 auto; display: block; border: 1px solid var(--border-color); box-shadow: 0 10px 30px var(--shadow-color); }
+        .blog-content { max-width: 750px; margin: 40px auto; padding: 0 20px; font-size: 18px; line-height: 1.8; text-align: left; }
+        .blog-content p { margin-bottom: 20px; color: var(--text-color); }
+        .blog-content strong { color: var(--primary-color); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">MyBlog.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">&larr; Kembali ke Portofolio</a></li>
+                <li><button id="theme-toggle" class="theme-btn">☀️</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="blog-header">
+        <h1>Perjalanan Belajar Coding Pertamaku</h1>
+        <p class="blog-meta">📅 Ditulis pada 2 April 2026 | ✍️ Ekalavya Nirartha</p>
+        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Setup Coding" class="blog-hero-img">
+    </div>
+
+    <div class="blog-content">
+        <p>Belajar <strong>coding</strong> awalnya terasa seperti mempelajari bahasa alien. Ada begitu banyak simbol, tanda kurung, dan aturan sintaks yang harus diingat. Saya ingat pertama kali melihat layar hitam dengan teks warna-warni, rasanya sangat membingungkan sekaligus menantang.</p>
+        
+        <p>Namun, setelah mencoba membuat struktur dasar menggunakan <strong>HTML</strong>, saya mulai melihat keajaibannya. Menuliskan beberapa baris kode dan melihatnya berubah menjadi elemen di web browser adalah pengalaman yang luar biasa memuaskan.</p>
+        
+        <p>Langkah selanjutnya adalah mempelajari <strong>CSS</strong>. Di sinilah semuanya menjadi menyenangkan karena saya bisa memberikan warna, mengatur tata letak, dan membuat tampilan website menjadi lebih hidup. Fitur <em>Dark Mode</em> dan animasi transisi membuat saya sadar bahwa coding bukan hanya tentang logika, tapi juga tentang seni.</p>
+
+        <p>Proyek portofolio ini adalah salah satu hasil dari proses belajar tersebut. Saya tidak sabar untuk terus belajar dan membangun lebih banyak hal keren di masa depan!</p>
+    </div>
+
+    <script>
+        // Script Tema
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); themeToggle.textContent = '🌙'; } 
+        else { themeToggle.textContent = '☀️'; }
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode'); 
+            if (body.classList.contains('light-mode')) { localStorage.setItem('theme', 'light'); themeToggle.textContent = '🌙'; } 
+            else { localStorage.setItem('theme', 'dark'); themeToggle.textContent = '☀️'; }
+        });
+    </script>
+</body>
+</html>

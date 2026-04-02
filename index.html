@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Ekalavya Nirartha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Portofolio.</div>
+
+        <nav>
+            <ul>
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#proyek">Proyek</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><button id="theme-toggle" class="theme-btn">☀️</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h1>Halo, Saya <span class="highlight">EKALAVYA NIRARTHA</span></h1>
+            <p class="subtitle">Seorang Web Developer yang bersemangat menciptakan pengalaman digital yang luar biasa.
+            </p>
+            <div class="hero-buttons">
+                <a href="#proyek" class="btn">Lihat Karya Saya</a>
+                <a href="#kontak" class="btn btn-outline">Hubungi Saya</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="Ekalavya.JPEG" alt="Foto Profil Ekalavya">
+        </div>
+    </section>
+
+    <section id="tentang">
+        <h2>Tentang Saya</h2>
+        <div class="about-content">
+            <p>Halo! Saya Ekalavya. Saya memiliki minat besar dalam dunia teknologi dan pengembangan web. Saya selalu
+                antusias mempelajari teknologi baru dan menerapkannya untuk memecahkan masalah atau membangun ide-ide
+                kreatif.</p>
+
+            <h3>Keahlian Saya</h3>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript</li>
+                <li>Responsive Web Design</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="proyek">
+        <h2>Proyek Saya</h2>
+        <p class="section-subtitle">Beberapa karya terbaik yang pernah saya buat.</p>
+        <div class="project-grid">
+            
+            <a href="proyek1.html" class="project-card">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Thumbnail E-Commerce" class="project-img">
+                <div class="project-info">
+                    <h3>Website E-Commerce</h3>
+                    <p>Membangun antarmuka toko online yang responsif dengan fitur keranjang belanja.</p>
+                    <span class="btn-small">Lihat Detail</span>
+                </div>
+            </a>
+
+            <a href="proyek2.html" class="project-card">
+                <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Thumbnail To-Do List" class="project-img">
+                <div class="project-info">
+                    <h3>Aplikasi Pencatat Tugas</h3>
+                    <p>Aplikasi To-Do List interaktif berbasis web untuk manajemen waktu.</p>
+                    <span class="btn-small">Lihat Detail</span>
+                </div>
+            </a>
+
+            <a href="proyek3.html" class="project-card">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200&q=80" alt="Thumbnail Blog" class="project-img">
+                <div class="project-info">
+                    <h3>Blog Pribadi</h3>
+                    <p>Platform blog minimalis untuk membagikan artikel dan pemikiran seputar teknologi.</p>
+                    <span class="btn-small">Lihat Detail</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <section id="kontak">
+        <h2>Mari Berkolaborasi</h2>
+        <p>Apakah Anda memiliki ide proyek atau sekadar ingin menyapa? Jangan ragu untuk menghubungi saya melalui platform di bawah ini!</p>
+        
+        <div class="contact-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=arthamuz@gmail.com" target="_blank" class="btn">📧 Kirim Email</a>
+            
+            <a href="https://wa.me/6283139369052" target="_blank" class="btn btn-outline">📱 WhatsApp</a>
+            <a href="https://instagram.com/arrthaaa" target="_blank" class="btn btn-outline">📸 Instagram</a>
+            <a href="https://tiktok.com/@arthuruhaha" target="_blank" class="btn btn-outline">🎵 TikTok</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ekalavya Nirartha. Do your best in every moment.</p>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Cek apakah sebelumnya pengguna sudah memilih light mode di browser mereka
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.textContent = '🌙'; // Hanya tampilkan ikon bulan
+        } else {
+            themeToggle.textContent = '☀️'; // Hanya tampilkan ikon matahari
+        }
+
+        // Fungsi saat tombol diklik
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pencatat Tugas | Proyek 2</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Gaya khusus untuk To-Do List */
+        .todo-wrapper { padding: 100px 5%; display: flex; justify-content: center; }
+        .todo-app { background: var(--bg-surface); width: 100%; max-width: 500px; padding: 40px; border-radius: 15px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px var(--shadow-color); text-align: center; }
+        .input-group { display: flex; gap: 10px; margin: 20px 0; }
+        .input-group input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-color); font-size: 16px; outline: none; transition: border 0.3s; }
+        .input-group input:focus { border-color: var(--primary-color); }
+        ul { list-style: none; padding: 0; margin-top: 20px; text-align: left; }
+        li { background: var(--bg-color); padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border-color); transition: transform 0.2s; }
+        li:hover { transform: translateX(5px); border-color: var(--primary-color); }
+        .btn-delete { background: #ff4757; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        .btn-delete:hover { background: #ff6b81; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Taskly.</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">&larr; Kembali ke Portofolio</a></li>
+                <li><button id="theme-toggle" class="theme-btn">☀️</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="todo-wrapper">
+        <div class="todo-app">
+            <h2>Pencatat Tugas</h2>
+            <p class="section-subtitle">Tuliskan hal yang perlu kamu selesaikan hari ini.</p>
+            
+            <div class="input-group">
+                <input type="text" id="taskInput" placeholder="Contoh: Belajar JavaScript dasar...">
+                <button class="btn" onclick="tambahTugas()">Tambah</button>
+            </div>
+            
+            <ul id="taskList">
+                <li><span>Membaca artikel tentang desain web</span> <button class="btn-delete" onclick="this.parentElement.remove()">X</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Logika To-Do List
+        function tambahTugas() {
+            let input = document.getElementById("taskInput");
+            let teks = input.value;
+            if (teks === "") { alert("Tugas tidak boleh kosong!"); return; }
+            let li = document.createElement("li");
+            li.innerHTML = `<span>${teks}</span> <button class="btn-delete" onclick="this.parentElement.remove()">X</button>`;
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+
+        // Script Tema
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); themeToggle.textContent = '🌙'; } 
+        else { themeToggle.textContent = '☀️'; }
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode'); 
+            if (body.classList.contains('light-mode')) { localStorage.setItem('theme', 'light'); themeToggle.textContent = '🌙'; } 
+            else { localStorage.setItem('theme', 'dark'); themeToggle.textContent = '☀️'; }
+        });
+    </script>
+</body>
+</html>
