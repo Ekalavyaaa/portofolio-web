@@ -1,25 +1,93 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Pribadi | Proyek 3</title>
+    <title>Profilku | Proyek 3</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Gaya khusus untuk Artikel Blog */
-        .blog-header { text-align: center; padding: 60px 5% 30px; }
-        .blog-header h1 { font-size: 40px; margin-bottom: 10px; color: var(--primary-color); text-shadow: 0 0 10px var(--glow-color); }
-        .blog-meta { color: var(--text-light); font-size: 14px; margin-bottom: 30px; }
-        .blog-hero-img { width: 100%; max-width: 800px; height: 400px; object-fit: cover; border-radius: 15px; margin: 0 auto; display: block; border: 1px solid var(--border-color); box-shadow: 0 10px 30px var(--shadow-color); }
-        .blog-content { max-width: 750px; margin: 40px auto; padding: 0 20px; font-size: 18px; line-height: 1.8; text-align: left; }
-        .blog-content p { margin-bottom: 20px; color: var(--text-color); }
-        .blog-content strong { color: var(--primary-color); }
+        /* Gaya khusus untuk Artikel Blog / Profil */
+        .blog-header {
+            text-align: center;
+            padding: 60px 5% 30px;
+        }
+
+        .blog-header h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--glow-color);
+        }
+
+        .blog-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .blog-hero-img {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 0 auto;
+            display: block;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .blog-content {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .blog-content p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .blog-content strong {
+            color: var(--primary-color);
+        }
+
+        .blog-content em {
+            color: var(--text-light);
+        }
+
+        /* Responsif HP untuk Proyek 3 */
+        @media (max-width: 768px) {
+            .blog-header {
+                padding: 40px 5% 20px;
+            }
+
+            .blog-header h1 {
+                font-size: 28px;
+            }
+
+            .blog-hero-img {
+                height: 220px;
+            }
+
+            /* Foto header dibuat lebih pendek */
+            .blog-content {
+                font-size: 16px;
+                padding: 0 10px;
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header>
-        <div class="logo">MyBlog.</div>
+        <div class="logo">MyProfile.</div>
         <nav>
             <ul>
                 <li><a href="index.html">&larr; Kembali ke Portofolio</a></li>
@@ -29,32 +97,59 @@
     </header>
 
     <div class="blog-header">
-        <h1>Perjalanan Belajar Coding Pertamaku</h1>
-        <p class="blog-meta">📅 Ditulis pada 2 April 2026 | ✍️ Ekalavya Nirartha</p>
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Setup Coding" class="blog-hero-img">
+        <h1>Kenalan Yuk! Siapa sih Ekalavya Nirartha?</h1>
+        <p class="blog-meta">📅 Diperbarui pada 2 April 2026 | 🎓 Mahasiswa & Web Enthusiast</p>
+        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            alt="Mahasiswa Ngoding" class="blog-hero-img">
     </div>
 
     <div class="blog-content">
-        <p>Belajar <strong>coding</strong> awalnya terasa seperti mempelajari bahasa alien. Ada begitu banyak simbol, tanda kurung, dan aturan sintaks yang harus diingat. Saya ingat pertama kali melihat layar hitam dengan teks warna-warni, rasanya sangat membingungkan sekaligus menantang.</p>
-        
-        <p>Namun, setelah mencoba membuat struktur dasar menggunakan <strong>HTML</strong>, saya mulai melihat keajaibannya. Menuliskan beberapa baris kode dan melihatnya berubah menjadi elemen di web browser adalah pengalaman yang luar biasa memuaskan.</p>
-        
-        <p>Langkah selanjutnya adalah mempelajari <strong>CSS</strong>. Di sinilah semuanya menjadi menyenangkan karena saya bisa memberikan warna, mengatur tata letak, dan membuat tampilan website menjadi lebih hidup. Fitur <em>Dark Mode</em> dan animasi transisi membuat saya sadar bahwa coding bukan hanya tentang logika, tapi juga tentang seni.</p>
+        <p>Halo semuanya! Kenalin, aku <strong>Ekalavya Nirartha</strong>. Selamat datang di pojok kecilku di internet.
+            Saat ini, aku adalah seorang mahasiswa di <strong>ITB STIKOM Bali</strong> yang lagi sibuk-sibuknya bergelut
+            dengan tugas kuliah, <em>deadline</em>, dan rutinitas <em>debugging</em> kode sampai tengah malam.</p>
 
-        <p>Proyek portofolio ini adalah salah satu hasil dari proses belajar tersebut. Saya tidak sabar untuk terus belajar dan membangun lebih banyak hal keren di masa depan!</p>
+        <p>Jujur aja, kehidupan mahasiswa IT itu nggak jauh-jauh dari yang namanya kopi dan layar laptop. Awalnya sempet
+            pusing ngelihat barisan kode, tapi entah kenapa, setiap kali berhasil mecahin <em>error</em> atau ngelihat
+            <em>website</em> buatanku jalan lancar, ada kepuasan tersendiri yang bikin aku makin ketagihan buat belajar
+            <strong>Web Development</strong>, khususnya di ranah <em>Front-End</em>.</p>
+
+        <p>Tapi tunggu dulu, hidupku nggak cuma soal ngetik kode! Di luar jam kuliah, aku adalah seorang <em>gamer</em>
+            kompetitif. Fakta menarik: aku adalah bagian dari tim e-sports <strong>Athena Shinrai</strong>. Kami baru
+            saja berhasil membanggakan nama kampus dengan menyabet <strong>Juara 2 turnamen Mobile Legends di ajang
+                D'TIK Fest 2025</strong>! Buatku, kerja sama tim, strategi, dan kecepatan mengambil keputusan di Land of
+            Dawn itu mirip banget sama proses nge-<em>build</em> struktur website yang kompleks.</p>
+
+        <p>Tujuanku ke depannya? Selain pengen cepet lulus dari ITB STIKOM Bali dengan nilai yang membanggakan, aku
+            pengen terus ngembangin <em>skill</em> supaya bisa bikin produk digital yang keren dan fungsional. Siapa
+            tahu, suatu saat nanti aku bisa nge-<em>develop</em> sistem untuk turnamen e-sports besar, kan?</p>
+
+        <p>Terima kasih udah mampir buat baca profil singkatku. Kalau kamu mau diskusi soal <em>coding</em>, nawarin
+            <em>project</em> bareng, atau malah ngajakin <em>mabar Rank</em>, jangan ragu buat sapa aku lewat menu
+            <strong>Kontak</strong> ya. <em>Let's connect, write some codes, and push rank!</em> 🚀🎮</p>
     </div>
-
     <script>
-        // Script Tema
+        // Script Tema agar seragam dengan halaman utama
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        if (localStorage.getItem('theme') === 'light') { body.classList.add('light-mode'); themeToggle.textContent = '🌙'; } 
-        else { themeToggle.textContent = '☀️'; }
+
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-mode');
+            themeToggle.textContent = '🌙';
+        } else {
+            themeToggle.textContent = '☀️';
+        }
+
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode'); 
-            if (body.classList.contains('light-mode')) { localStorage.setItem('theme', 'light'); themeToggle.textContent = '🌙'; } 
-            else { localStorage.setItem('theme', 'dark'); themeToggle.textContent = '☀️'; }
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+                themeToggle.textContent = '🌙';
+            } else {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.textContent = '☀️';
+            }
         });
     </script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,65 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Gaya khusus untuk halaman E-Commerce */
-        .shop-container { padding: 100px 5%; max-width: 1200px; margin: auto; text-align: center; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .product-card { background: var(--bg-surface); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 4px 15px var(--shadow-color); transition: all 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); border-color: var(--primary-color); box-shadow: 0 10px 20px var(--glow-color); }
-        .product-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-        .price { font-size: 20px; font-weight: bold; color: var(--primary-color); margin: 10px 0; }
+        .shop-container {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .product-card {
+            background: var(--bg-surface);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px var(--glow-color);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 10px 0;
+        }
+
+        /* Responsif HP untuk Proyek 1 */
+        @media (max-width: 768px) {
+            .shop-container {
+                padding: 60px 5%;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* 1 produk per baris di HP */
+        }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -30,25 +82,31 @@
     <div class="shop-container">
         <h2>Katalog Produk</h2>
         <p class="section-subtitle">Simulasi antarmuka toko online modern.</p>
-        
+
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sepatu" class="product-img">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Sepatu" class="product-img">
                 <h3>Sepatu Sneaker Merah</h3>
                 <p class="price">Rp 450.000</p>
-                <button class="btn" style="width: 100%;" onclick="alert('Sepatu ditambahkan ke keranjang!')">🛒 Beli Sekarang</button>
+                <button class="btn" style="width: 100%;" onclick="alert('Sepatu ditambahkan ke keranjang!')">🛒 Beli
+                    Sekarang</button>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jam Tangan" class="product-img">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Jam Tangan" class="product-img">
                 <h3>Jam Tangan Minimalis</h3>
                 <p class="price">Rp 850.000</p>
-                <button class="btn" style="width: 100%;" onclick="alert('Jam tangan ditambahkan ke keranjang!')">🛒 Beli Sekarang</button>
+                <button class="btn" style="width: 100%;" onclick="alert('Jam tangan ditambahkan ke keranjang!')">🛒 Beli
+                    Sekarang</button>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tas" class="product-img">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                    alt="Tas" class="product-img">
                 <h3>Tas Ransel Kanvas</h3>
                 <p class="price">Rp 300.000</p>
-                <button class="btn" style="width: 100%;" onclick="alert('Tas ditambahkan ke keranjang!')">🛒 Beli Sekarang</button>
+                <button class="btn" style="width: 100%;" onclick="alert('Tas ditambahkan ke keranjang!')">🛒 Beli
+                    Sekarang</button>
             </div>
         </div>
     </div>
@@ -60,10 +118,11 @@
             body.classList.add('light-mode'); themeToggle.textContent = '🌙';
         } else { themeToggle.textContent = '☀️'; }
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode'); 
-            if (body.classList.contains('light-mode')) { localStorage.setItem('theme', 'light'); themeToggle.textContent = '🌙'; } 
+            body.classList.toggle('light-mode');
+            if (body.classList.contains('light-mode')) { localStorage.setItem('theme', 'light'); themeToggle.textContent = '🌙'; }
             else { localStorage.setItem('theme', 'dark'); themeToggle.textContent = '☀️'; }
         });
     </script>
 </body>
+
 </html>

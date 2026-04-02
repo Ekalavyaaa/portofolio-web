@@ -367,21 +367,58 @@ footer {
     transition: background-color 0.5s ease;
 }
 
-/* --- Responsif untuk Layar Kecil (HP) --- */
+/* --- Responsif untuk Layar Kecil (HP / Tablet) --- */
 @media (max-width: 768px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-top: 50px;
+    /* Mengurangi jarak padding agar layar HP tidak terlalu banyak ruang kosong */
+    section {
+        padding: 60px 5%; 
     }
 
+    /* Mengecilkan ukuran teks judul */
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    .hero-content .subtitle {
+        font-size: 16px;
+    }
+
+    /* Menyesuaikan area Beranda (Hero) */
+    .hero {
+        flex-direction: column-reverse; /* Teks di bawah, Foto di atas */
+        text-align: center;
+        padding-top: 60px;
+    }
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap; /* Tombol akan turun jika tidak muat */
+    }
+    
+    /* Mengecilkan ukuran foto profil */
+    .hero-image img {
+        width: 200px;
+        height: 200px;
     }
 
+    /* Menyesuaikan Navigasi */
     header {
         flex-direction: column;
         gap: 15px;
-        padding: 20px;
+        padding: 15px;
+    }
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .theme-btn {
+        margin-left: 0;
+    }
+
+    /* Membuat kartu proyek menjadi 1 kolom penuh ke bawah */
+    .project-grid {
+        grid-template-columns: 1fr; 
     }
 }
